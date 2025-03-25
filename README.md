@@ -4,7 +4,7 @@ Usage:
 
 Timer timer;
 
-timer.set_callback([]() {
+timer.set_callback([] {
     std::cout << "Timer expired! Executing callback..." << std::endl;
 });
 
