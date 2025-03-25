@@ -30,6 +30,12 @@ bool Timer::set_callback(const std::function<void()> &callback) {
     return set_callback_private(callback);
 }
 
+void Timer::restart() {
+    std::lock_guard lock(caller_mtx_);
+    stop_private();
+    start_private();
+}
+
 void Timer::start() {
     std::lock_guard lock(caller_mtx_);
     start_private();
@@ -132,4 +138,3 @@ wait_start_or_quit: // use goto instead of loop to keep locked util wait()
 
     goto wait_start_or_quit;
 }
-
