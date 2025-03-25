@@ -1,4 +1,4 @@
-# C++ Timer
+# A thread safe C++ Timer
 
 Usage:
 
