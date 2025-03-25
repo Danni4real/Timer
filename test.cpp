@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Timer.h"
 
 void loop(Timer *timer) {
@@ -45,6 +46,14 @@ int main() {
     timer.set_timeout(1);
     timer.start();
     std::this_thread::sleep_for(std::chrono::seconds(1));
+    timer.stop();
+    
+    std::cout << "\ntest 4:" << std::endl;
+    timer.set_timeout(3);
+    timer.start();
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+    timer.restart();
+    std::this_thread::sleep_for(std::chrono::seconds(2));
     timer.stop();
 
     std::cout << "\nDestory timer:" << std::endl;
