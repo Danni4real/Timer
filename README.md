@@ -11,7 +11,9 @@ timer.set_callback([] {
 timer.set_timeout(2);
 
 timer.start();
+
 std::this_thread::sleep_for(std::chrono::seconds(1));
+
 timer.stop();
 
 if (timer.timed_out())
