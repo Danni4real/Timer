@@ -6,9 +6,7 @@
 #define TIMER_H
 
 #include <mutex>
-#include <chrono>
 #include <thread>
-#include <iostream>
 #include <functional>
 #include <condition_variable>
 
@@ -20,6 +18,7 @@ public:
     bool set_timeout(int seconds);
     bool set_callback(const std::function<void()> &callback);
 
+    void restart();
     void start();
     void stop();
 
@@ -50,4 +49,3 @@ private:
 };
 
 #endif //TIMER_H
-
